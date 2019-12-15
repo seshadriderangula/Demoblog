@@ -1,0 +1,43 @@
+{% extends 'tatha/base.html' %}
+{% block content %}
+<div class = "container" style="margin-top: 100px">
+    <div class = "row" style="margin-top: 100px">
+        <div class="col-sm-6">
+                <form class="form-inline" action="{% url 'index' %}" method="post">
+                    {% csrf_token %}
+                    <label class="sr-only" for="inlineFormInputName2">First Name</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2"
+                           placeholder="First Name" name="fname">
+
+                    <label class="sr-only" for="inlineFormInputName2">Last Name</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormGroupInputName2"
+                           placeholder="Last Name" name="lname">
+                    <button type="submit" class="btn btn-secondary mb-2">Tell me a Chuck Norris Joke!</button>
+                </form>
+            </div>
+        <div class="col-sm-6">
+            <div class="card" style="width: 40rem;">
+  <div class="card-body">
+    <h5 class="card-title">Joke of the Day</h5>
+       <p class="card-text">
+                            {{ joker }}
+                        </p>
+    <a href="{% url 'portfolia' %}" class="card-link">Check out my portfolioa </a>
+  </div>
+</div>
+        </div>
+</div>
+</div>
+
+<ul>
+        {% for i in x %}
+             <li>{{i}}</li>
+        {% endfor %}
+
+        {% for i in x %}
+             <li>{{i}}</li>
+        {% endfor %}
+
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+
+{% extends 'tatha/base.html' %}
+
+{% block content %}
+<html>
+<body>
+<div class = "container">
+    <div class = "form-group row" style="margin-top: 70px">
+         <form action="{% url 'send' %}" method="POST">
+              {% csrf_token %}
+              Email: <input type="email" name="email" value="" placeholder="email"><br>
+              Password: <input type="text" name="password" value="" placeholder="password"><br>
+              <input type="submit" value="Submit">
+         </form>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}
